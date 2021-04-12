@@ -1,8 +1,29 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.0
+-- https://www.phpmyadmin.net/
+--
+-- Hôte : db
+-- Généré le : lun. 12 avr. 2021 à 17:19
+-- Version du serveur :  10.5.9-MariaDB-1:10.5.9+maria~focal
+-- Version de PHP : 7.4.16
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
 --
 -- Base de données : `mediatheque`
 --
 
-CREATE DATABASE IF NOT EXISTS mediatheque
+CREATE DATABASE IF NOT EXISTS mediatheque;
+
+USE mediatheque;
 
 -- --------------------------------------------------------
 
@@ -25,8 +46,8 @@ INSERT INTO `film` (`id`, `title`, `year`, `note`) VALUES
 (1, 'La ligne verte', '2004', '5'),
 (2, 'Contact', '2000', '5'),
 (3, 'La 7éme compagnie', '1987', '2'),
-(4, 'Le soleil rouge', '1978', '4');
-(5, 'Le soleil rouge', '1978', '1');
+(4, 'Le soleil rouge', '1978', '4'),
+(5, 'Le soleil rouge', '1978', '1'),
 (6, 'Le soleil rouge', '1978', '3');
 
 --
