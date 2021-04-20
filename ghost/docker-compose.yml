@@ -1,0 +1,35 @@
+version: "3.3"
+
+services:
+  git:
+    container_name: git
+    image: gitea/gitea:latest
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    restart: always
+    ports:
+      - "2222:22"
+    volumes:
+      - dataGhost:/data
+
+  ghost:
+    container_name: ghost
+    image: ghost:2-alpine
+    # restart: always
+    environment:
+      - database_client="mysql"
+      - database_connection_host="db_ghost"
+      - database_connection_user="root"
+      - database_connection_password="mdp"
+      - database_connection_database="ghost"
+
+  db_ghost:
+    container_name: dbGhost
+    image: mysql:5.7
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD="mdp"
+
+volumes:
+  dataGhost:
